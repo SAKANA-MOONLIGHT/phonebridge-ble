@@ -4,7 +4,9 @@ Experimental Bluetooth-only iPhone pointer/keyboard control and screen streaming
 
 ## Status
 
-The Windows HID path has been exercised with a real iPhone. Screen streaming is experimental and has not yet been built, installed, or validated on an iPhone. No frame-rate, quality, latency, or general compatibility guarantee is made.
+The Windows HID path has been exercised with a real iPhone. The companion app and broadcast extension have been built successfully with Xcode 16.4 for arm64 iPhones running iOS 17 or later. Screen streaming is still experimental: signing, installation and real-device screen capture remain unverified. No frame-rate, quality, latency, or general compatibility guarantee is made.
+
+[First successful iPhone build](https://github.com/SAKANA-MOONLIGHT/phonebridge-ble/actions/runs/40005002021). Portable Swift protocol and frame lifecycle checks also passed in this build. A successful build is not evidence of actual screen streaming.
 
 The receiver accepts bounded, checksummed JPEG frames over an encrypted BLE GATT write characteristic. The iPhone companion includes a ReplayKit Broadcast Upload Extension for system-wide capture. It does not transmit audio. Pointer control currently uses relative movement, not absolute touch coordinates or multitouch.
 
