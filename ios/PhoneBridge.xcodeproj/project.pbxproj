@@ -1,0 +1,47 @@
+// !$*UTF8*$!
+{
+archiveVersion = 1;
+classes = {};
+objectVersion = 56;
+objects = {
+000000000000000000000008 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhoneBridge/PhoneBridgeApp.swift"; sourceTree = SOURCE_ROOT; };
+000000000000000000000009 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Broadcast/FrameWire.swift"; sourceTree = SOURCE_ROOT; };
+00000000000000000000000A = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Broadcast/CaptureGate.swift"; sourceTree = SOURCE_ROOT; };
+00000000000000000000000B = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Broadcast/BluetoothTransport.swift"; sourceTree = SOURCE_ROOT; };
+00000000000000000000000C = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Broadcast/SampleHandler.swift"; sourceTree = SOURCE_ROOT; };
+00000000000000000000000D = { isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PhoneBridge/Info.plist"; sourceTree = SOURCE_ROOT; };
+00000000000000000000000E = { isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Broadcast/Info.plist"; sourceTree = SOURCE_ROOT; };
+000000000000000000000006 = { isa = PBXFileReference; explicitFileType = wrapper.application; path = PhoneBridge.app; sourceTree = BUILT_PRODUCTS_DIR; };
+000000000000000000000007 = { isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; path = PhoneBridgeBroadcast.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+00000000000000000000000F = { isa = PBXBuildFile; fileRef = 000000000000000000000008;  };
+000000000000000000000010 = { isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (00000000000000000000000F,); runOnlyForDeploymentPostprocessing = 0;  };
+000000000000000000000011 = { isa = PBXBuildFile; fileRef = 000000000000000000000009;  };
+000000000000000000000012 = { isa = PBXBuildFile; fileRef = 00000000000000000000000A;  };
+000000000000000000000013 = { isa = PBXBuildFile; fileRef = 00000000000000000000000B;  };
+000000000000000000000014 = { isa = PBXBuildFile; fileRef = 00000000000000000000000C;  };
+000000000000000000000015 = { isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (000000000000000000000011, 000000000000000000000012, 000000000000000000000013, 000000000000000000000014,); runOnlyForDeploymentPostprocessing = 0;  };
+000000000000000000000016 = { isa = PBXBuildFile; fileRef = 000000000000000000000007; settings = { ATTRIBUTES = (RemoveHeadersOnCopy,); }; };
+000000000000000000000017 = { isa = PBXCopyFilesBuildPhase; buildActionMask = 2147483647; files = (000000000000000000000016,); runOnlyForDeploymentPostprocessing = 0; dstPath = ""; dstSubfolderSpec = 13; name = "Embed App Extensions"; };
+000000000000000000000018 = { isa = PBXContainerItemProxy; containerPortal = 000000000000000000000001; proxyType = 1; remoteGlobalIDString = 000000000000000000000005; remoteInfo = PhoneBridgeBroadcast; };
+000000000000000000000019 = { isa = PBXTargetDependency; target = 000000000000000000000005; targetProxy = 000000000000000000000018; };
+00000000000000000000001A = { isa = XCBuildConfiguration; name = Debug; buildSettings = { SDKROOT = "iphoneos"; IPHONEOS_DEPLOYMENT_TARGET = "17.0"; SWIFT_VERSION = "5.0"; CLANG_ENABLE_MODULES = "YES"; ENABLE_USER_SCRIPT_SANDBOXING = "YES"; SWIFT_OPTIMIZATION_LEVEL = "-Onone"; SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG"; }; };
+00000000000000000000001B = { isa = XCBuildConfiguration; name = Release; buildSettings = { SDKROOT = "iphoneos"; IPHONEOS_DEPLOYMENT_TARGET = "17.0"; SWIFT_VERSION = "5.0"; CLANG_ENABLE_MODULES = "YES"; ENABLE_USER_SCRIPT_SANDBOXING = "YES"; SWIFT_OPTIMIZATION_LEVEL = "-O"; }; };
+00000000000000000000001C = { isa = XCConfigurationList; buildConfigurations = (00000000000000000000001A, 00000000000000000000001B,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+00000000000000000000001D = { isa = XCBuildConfiguration; name = Debug; buildSettings = { CODE_SIGN_STYLE = "Automatic"; TARGETED_DEVICE_FAMILY = "1,2"; GENERATE_INFOPLIST_FILE = "NO"; PRODUCT_NAME = "$(TARGET_NAME)"; LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks"; PRODUCT_BUNDLE_IDENTIFIER = "local.phonebridge.app"; INFOPLIST_FILE = "PhoneBridge/Info.plist"; SWIFT_OPTIMIZATION_LEVEL = "-Onone"; SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG"; }; };
+00000000000000000000001E = { isa = XCBuildConfiguration; name = Release; buildSettings = { CODE_SIGN_STYLE = "Automatic"; TARGETED_DEVICE_FAMILY = "1,2"; GENERATE_INFOPLIST_FILE = "NO"; PRODUCT_NAME = "$(TARGET_NAME)"; LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks"; PRODUCT_BUNDLE_IDENTIFIER = "local.phonebridge.app"; INFOPLIST_FILE = "PhoneBridge/Info.plist"; SWIFT_OPTIMIZATION_LEVEL = "-O"; }; };
+00000000000000000000001F = { isa = XCConfigurationList; buildConfigurations = (00000000000000000000001D, 00000000000000000000001E,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+000000000000000000000020 = { isa = XCBuildConfiguration; name = Debug; buildSettings = { CODE_SIGN_STYLE = "Automatic"; TARGETED_DEVICE_FAMILY = "1,2"; GENERATE_INFOPLIST_FILE = "NO"; PRODUCT_NAME = "$(TARGET_NAME)"; LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks"; PRODUCT_BUNDLE_IDENTIFIER = "local.phonebridge.app.Broadcast"; INFOPLIST_FILE = "Broadcast/Info.plist"; APPLICATION_EXTENSION_API_ONLY = "YES"; SKIP_INSTALL = "YES"; SWIFT_OPTIMIZATION_LEVEL = "-Onone"; SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG"; }; };
+000000000000000000000021 = { isa = XCBuildConfiguration; name = Release; buildSettings = { CODE_SIGN_STYLE = "Automatic"; TARGETED_DEVICE_FAMILY = "1,2"; GENERATE_INFOPLIST_FILE = "NO"; PRODUCT_NAME = "$(TARGET_NAME)"; LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks"; PRODUCT_BUNDLE_IDENTIFIER = "local.phonebridge.app.Broadcast"; INFOPLIST_FILE = "Broadcast/Info.plist"; APPLICATION_EXTENSION_API_ONLY = "YES"; SKIP_INSTALL = "YES"; SWIFT_OPTIMIZATION_LEVEL = "-O"; }; };
+000000000000000000000022 = { isa = XCConfigurationList; buildConfigurations = (000000000000000000000020, 000000000000000000000021,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+000000000000000000000023 = { isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0;  };
+000000000000000000000024 = { isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0;  };
+000000000000000000000004 = { isa = PBXNativeTarget; buildConfigurationList = 00000000000000000000001F; buildPhases = (000000000000000000000010, 000000000000000000000023, 000000000000000000000024, 000000000000000000000017,); buildRules = (); dependencies = (000000000000000000000019,); name = PhoneBridge; productName = PhoneBridge; productReference = 000000000000000000000006; productType = "com.apple.product-type.application"; };
+000000000000000000000025 = { isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0;  };
+000000000000000000000026 = { isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0;  };
+000000000000000000000005 = { isa = PBXNativeTarget; buildConfigurationList = 000000000000000000000022; buildPhases = (000000000000000000000015, 000000000000000000000025, 000000000000000000000026,); buildRules = (); dependencies = (); name = PhoneBridgeBroadcast; productName = PhoneBridgeBroadcast; productReference = 000000000000000000000007; productType = "com.apple.product-type.app-extension"; };
+000000000000000000000003 = { isa = PBXGroup; children = (000000000000000000000006, 000000000000000000000007,); name = Products; sourceTree = "<group>"; };
+000000000000000000000002 = { isa = PBXGroup; children = (000000000000000000000008, 00000000000000000000000D, 000000000000000000000009, 00000000000000000000000A, 00000000000000000000000B, 00000000000000000000000C, 00000000000000000000000E, 000000000000000000000003,); sourceTree = "<group>"; };
+000000000000000000000001 = { isa = PBXProject; attributes = { LastUpgradeCheck = 1630; TargetAttributes = { 000000000000000000000004 = { CreatedOnToolsVersion = 16.3; }; 000000000000000000000005 = { CreatedOnToolsVersion = 16.3; }; }; }; buildConfigurationList = 00000000000000000000001C; compatibilityVersion = "Xcode 14.0"; developmentRegion = en; hasScannedForEncodings = 0; knownRegions = (en, Base, "zh-Hans",); mainGroup = 000000000000000000000002; productRefGroup = 000000000000000000000003; projectDirPath = ""; projectRoot = ""; targets = (000000000000000000000004, 000000000000000000000005,); };
+};
+rootObject = 000000000000000000000001;
+}

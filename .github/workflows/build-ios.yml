@@ -1,0 +1,33 @@
+name: Build iPhone companion (unsigned)
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: macos-15
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Check toolchain and protocol
+        run: |
+          xcodebuild -version
+          swiftc ios/Broadcast/FrameWire.swift ios/Broadcast/CaptureGate.swift ios/Tests/FrameWireCheck.swift -o "$RUNNER_TEMP/wire-check"
+          "$RUNNER_TEMP/wire-check"
+      - name: Generate Xcode project
+        run: node scripts/generate-ios-project.cjs
+      - name: Build for a physical iPhone without signing
+        run: |
+          xcodebuild -project ios/PhoneBridge.xcodeproj -scheme PhoneBridge -configuration Release -sdk iphoneos -destination 'generic/platform=iOS' -derivedDataPath .build/apple CODE_SIGNING_ALLOWED=NO build
+      - name: Package unsigned app
+        run: |
+          mkdir -p .build/unsigned/Payload
+          cp -R .build/apple/Build/Products/Release-iphoneos/PhoneBridge.app .build/unsigned/Payload/
+          cd .build/unsigned
+          zip -qr PhoneBridge-unsigned.ipa Payload
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: PhoneBridge-unsigned-iPhone
+          path: .build/unsigned/PhoneBridge-unsigned.ipa
+          if-no-files-found: error
+          retention-days: 7

@@ -1,0 +1,6 @@
+.build/
+dist/
+*.user
+*.log
+ios/PhoneBridge.xcodeproj/xcuserdata/
+.DS_Store
